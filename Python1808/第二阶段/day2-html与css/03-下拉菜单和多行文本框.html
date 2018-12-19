@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="" method="get">
+			<!--1.下拉菜单 (select - option)
+				a.select标签 - 代表整个下拉菜单
+				name属性 - 区分和提交
+				
+				b.option标签 - 下拉菜单中的选项
+				双标签
+				<option value="">内容</option>
+				selected属性 - 设置默认选中
+				value属性 - 提交的内容
+				内容 - 显示部分
+				
+				c.optgroup标签
+				label属性  - 给分组设置名字
+				
+			-->
+			<select name="学科">
+				<optgroup label="理科"></optgroup>
+				<option value="">语文</option>
+				<option value="">数学</option>
+				<option value="">英语</option>
+				<option value="">物理</option>
+				<option value="">化学</option>
+				<optgroup label="文科"></optgroup>
+				<option value="">语文</option>
+				<option value="">数学</option>
+				<option value="">英语</option>
+				<option value="">政治</option>
+				<option value="">地理</option>
+			</select>
+			
+			<select name="province">
+				<option value="">四川省</option>
+				<option value="">湖南省</option>
+				<option value="">广西省</option>
+				<option value="" selected="selected">云南省</option>
+				<option value="">辽宁省</option>
+			</select>
+			
+			<select name="city">
+				<option value="">成都市</option>
+				<option value="">南宁市</option>
+				<option value="">长沙市</option>
+				<option value="" selected="selected">云南市</option>
+				<option value="">长春市</option>
+			</select>
+			
+			<!--2.多行文本输入框（textarea）
+				可以输入多行内容，内容超出范围可以上下滚动
+				name属性 - 提交和区分
+				rows -  一次性可以显示的行数  - 决定高度
+				cols -  一次性可以显示的列数  - 决定宽度
+				placeholder - 提示文字
+				内容 - 提交、设置默认值显示
+				maxlength - 设置最多能输入文字个数
+			-->
+			<textarea maxlength="" placeholder="请输入建议..." name="地址" rows="4" cols="30"></textarea>
+			
+		</form>
+	</body>
+</html>

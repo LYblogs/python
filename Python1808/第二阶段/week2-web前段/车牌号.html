@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin:0;
+				border: 0;
+			}
+			#div1{
+				height: 45px;
+				text-align: center;
+				margin-top: 258px;
+				border-bottom: 1px solid #B9BEBA;
+			}
+			#div1 input{
+				color: red;
+				text-align: center;
+				font-size: 30px;
+				outline: 0;
+				border-bottom: 2px solid #B9BEBA;
+				vertical-align:middle;
+			}
+			#div1 button{
+				color: white;
+				font-size: 15px;
+				width: 80px;
+				height: 40px;
+				background-color: red;
+				margin-bottom: 10px;
+				vertical-align:middle;
+				border-radius: 10%;
+				outline: 0;
+				cursor: pointer;
+				font-weight: 600;
+			}
+			#div2{
+				margin-top: 5px;
+				text-align: center;
+				font-size: 30px;
+			}
+			#div1 button:active{
+				background-color: burlywood;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			<input type="text" name="" id="" value="" placeholder="请输入车牌号..."/>
+			<button id="button1">确认</button>
+			<button id="button2">取消</button>
+		</div>
+		<div id="div2">
+			
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	//===================js==============
+	//================1.获取节点==================
+	var carNumNode = document.getElementsByTagName('input')[0]
+	var queryBtnNode =document.getElementById('button1')
+	var clearBtnNode =document.getElementById('button2')
+	var resultBoxNode =document.getElementById('div2')
+	
+	var reStr =/[京津沪渝辽吉黑冀鲁豫晋陕甘闽粤桂川云贵苏浙皖湘鄂赣青新宁蒙藏琼][A-Z]\s+[A-Z\d]{5}$/;
+	//==========2.判断===============
+	function idCar(carNumber){
+		//获取最后一个数字
+		for(var x=carNumber.length-1;x>=0;x--){
+			var char1 =carNumber[x];
+			if(char1>='0'&& char1<='9'){
+				break;
+			}
+		}
+		//b.判断数字是否限行
+		//获取当前时间
+		var now = new Date();
+		var year =now.getFullYear();
+		var moth = now.getMonth();
+		var day =now.getDate();
+		var week = now.getDay()
+		if(week>5){
+			return carNumber+'今日不限行'
+		}
+		if(week == char1 || (week+5)%10==char1){
+			return carNumber+'今日限行';
+		}else{
+			return carNumber+'今日不限行';
+		}
+	}
+	
+	
+	
+	
+	//================3.查询====================
+	queryBtnNode.onclick=function(){
+		//a.获取输入框的内容
+		var carNum =carNumNode.value;
+		//创建新的节点
+		var pNode =document.createElement('p')
+		//b.判断车牌号是否符合要求（地名文字+）
+		//正则对象.test(字符串) -匹配
+		if(reStr.test(carNum)){
+			
+			//判断车牌号是否限行
+			var message =idCar(carNum)
+			pNode.innerText=message
+		}else{
+			pNode.innerText=carNum+'不是有效的车牌号'
+		}
+		//c.添加节点
+		resultBoxNode.insertBefore(pNode,resultBoxNode.firstChild)
+	}
+	
+	//4.==========清除==============
+	clearBtnNode.onclick =function(){
+			resultBoxNode.innerHTML=' '
+		}	
+</script>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				position: relative;
+			}
+			#div1 img{
+				width: 600px;
+				height: 300px;
+				margin-top: 50px;
+			}
+			#div1 div{
+				position: absolute;
+				top:320px;
+				left:700px;
+			}
+			#div1 div font{
+				margin-left: 10px;
+				display: inline-block;
+				width: 10px;
+				height: 10px;
+				background-color:rgba(255,255,255,0);
+				border-radius: 50%;
+				border-color: rgba(255,255,255,0.4);
+				border: 2px solid #b9beba;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1" align="center">
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var num=1
+	//获取节点
+	var div1Node = document.getElementById('div1')
+	var imgNode = document.createElement('img')
+	div1Node.appendChild(imgNode)
+	//添加src属性
+	imgNode.src='img/slide-'+num+'.jpg'
+	//定时
+	var rotation = window.setInterval(function(){
+		//修改src属性
+		num++
+		imgNode.src='img/slide-'+num+'.jpg'
+		if(num>=4){
+			num=0
+		}
+	},3000)
+	
+	
+	//添加节点
+	var div2Node = document.createElement('div')
+	div2Node.innerHTML='<font ></font> <font> </font><font> </font><font> </font>'
+	div1Node.appendChild(div2Node)
+	
+	//获取圆圈节点
+	var num1=0
+	var circleNode =document.getElementsByTagName('font')
+	circleNode[0].id='font1'
+	circleNode[1].id='font2'
+	circleNode[2].id='font3'
+	circleNode[3].id='font4'
+	circleNode[num1].style.backgroundColor ='white'
+	
+	//圆圈定时
+	var circleRation = window.setInterval(function(){
+		circleNode[num1].style.backgroundColor ='rgba(255,255,255,0)'
+		if(num1>=3){
+			num1=-1
+		}
+		circleNode[num1+1].style.backgroundColor ='white'
+		num1++
+	},3000)
+	//圆圈点击
+	for(i in circleNode){
+		if(typeof(circleNode[i])=='object'){
+			circleNode[i].onclick=function(){
+			circleNode[0].style.backgroundColor ='rgba(255,255,255,0)'
+			circleNode[1].style.backgroundColor ='rgba(255,255,255,0)'
+			circleNode[2].style.backgroundColor ='rgba(255,255,255,0)'
+			circleNode[3].style.backgroundColor ='rgba(255,255,255,0)'
+			imgNode.src='img/slide-'+this.id[4]+'.jpg'
+			circleNode[parseInt(this.id[4])-1].style.backgroundColor ='white'
+		}
+		}
+		
+	}
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="img/a3.jpg"/>
+		<button disabled="disabled">点我</button>
+	</body>
+</html>
+<script type="text/javascript">
+	var imgNode = document.getElementsByTagName('img')[0];
+	//1.属性的点语法操作
+	/*
+	 * 节点.属性 - 获取属性值;
+	 * 节点.属性 = 新值 - 修改属性的值
+	 * 
+	 */
+	imgNode.title ='图片1'
+	//2.通过相应方法对属性进行操作
+	/*
+	 * a.获取属性
+	 */
+	var srcAttr = imgNode.getAttribute('src');
+	console.log(srcAttr);
+	
+	//b.给属性赋值
+	//节点.setAttribute
+	imgNode.setAttribute('title','憨批1')
+	
+	//c.删除属性
+	var buttonNode =document.getElementsByTagName('button')[0]
+	buttonNode.removeAttribute('disabled')
+</script>

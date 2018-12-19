@@ -1,0 +1,47 @@
+#body{
+	height: 500px;
+}
+
+#goods{
+	margin: 0 auto;
+	margin-top: 50px;
+	width: 70%;
+	/*height: 200px;*/
+	text-align: center;
+	background-color: coral;
+}
+#balance{
+	width: 70%;
+	margin: 0 auto;
+	height: 100px;
+	background-color: chartreuse;
+}
+
+#goods .td1{
+	width: 50px;
+	height: auto;
+}
+#goods .td2{
+	width:250px;
+	height: auto;
+}
+#goods .td3{
+	width:100px;
+	height: auto;
+}
+
+#goods .header{
+	background-color:#DDDDDD;
+	height: 40px;
+}
+
+#img0{
+	margin-bottom:8px;
+	margin-top:8px;
+	float: left;
+	width: 100px;
+	height: 100px;
+}
+#font0{
+	margin-top: 10px;
+}

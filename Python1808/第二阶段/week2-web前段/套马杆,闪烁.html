@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				position:relative;
+			}
+			#div1{
+				margin-left: 500px;
+				margin-top: 10px;
+				width:500px;
+				height: 200px;
+				border: 2px solid black;
+			}
+			#div2 #but1{
+				margin-top: 10px;
+				margin-left: 650px;
+				width: 80px;
+				height: 40px;
+				background-color: red;
+				font-size: 15px;
+				font-weight: 500;
+				outline: 0;
+				cursor: pointer;
+				border-radius: 10%;
+				border:none;
+			}
+			#div2 #but2{
+				margin-top: 10px;
+				margin-left: 30px;
+				width: 80px;
+				height: 40px;
+				background-color: red;
+				font-size: 15px;
+				font-weight: 500;
+				outline: 0;
+				cursor: pointer;
+				border-radius: 10%;
+				border:none;
+			}
+			#div2 #but1:active{
+				background-color: #DEB887;
+				color: white;
+			}
+			
+			
+			#div2 #but2:active{
+				background-color: #DEB887;
+				color: white;
+			}
+			#div1 font{
+				float: left;
+				width: 50px;
+				height: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+		</div>
+		<div id="div2">
+			<button id="but1">添加</button>
+			<button id="but2">闪烁</button>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	//随机数
+	function num(){
+		return parseInt(Math.random()*255);
+	}
+	//取出节点
+	var div1Node = document.getElementById('div1');
+	var addNode = document.getElementById('but1');
+	var bulingNode = document.getElementById('but2');
+	var num1 = 0
+	
+	function addLing(){
+			div1Node.removeChild(div1Node.lastChild)
+			var imgNode =document.createElement('font');
+			imgNode.style.display ='inline-block'
+			imgNode.style.backgroundColor='rgb('+num()+','+num()+','+num()+')';
+			div1Node.insertBefore(imgNode,div1Node.firstChild)
+	}
+	
+	//添加节点
+	function addImg(){
+		if(num1>=39){
+			div1Node.removeChild(div1Node.lastChild)
+		}
+		var imgNode =document.createElement('font');
+		imgNode.style.display ='inline-block'
+		imgNode.style.backgroundColor='rgb('+num()+','+num()+','+num()+')';
+		div1Node.insertBefore(imgNode,div1Node.firstChild)
+		num1++
+	}
+	
+	function buLin(){
+		//设置定时
+		if(bulingNode.innerText=='闪烁'){
+			bulingNode.innerText='暂停';
+			intervall1 =window.setInterval(addLing,10);
+		}else{
+			bulingNode.innerText='闪烁';
+			console.log(11)
+			window.clearInterval(intervall1);
+		}
+		
+	}
+	
+	
+	//添加属性
+	addNode.onclick = addImg;
+	bulingNode.onclick=buLin;
+</script>

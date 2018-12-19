@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				position: relative;
+			}
+			#div1{
+				height: 100px;
+				background-color: coral;
+				
+			}
+			#div2{
+				height: 500px;
+				background-color: chartreuse;
+			}
+			#div1 #close{
+				position: absolute;
+				top: 10px;
+				right: 15px;
+				width: 20px;
+				height: 20px;
+				background-color: white;
+				text-align: center;
+				line-height: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			<div id="close" onclick="close1()">
+				X
+			</div>
+		</div>
+		<div id="div2">
+			
+		</div>
+	</body>
+</html>
+
+<script type="text/javascript">
+	num =parseInt(Math.random()*255)
+	console.log(num)
+	function close1(){
+		var div1Node = document.getElementById('div1');
+		div1Node.parentNode.removeChild(div1Node);
+	}
+</script>

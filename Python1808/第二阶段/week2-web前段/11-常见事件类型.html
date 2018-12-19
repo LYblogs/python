@@ -1,0 +1,72 @@
+<!--
+	常见事件类型
+	1.onload - 页面加载完成对应的事件
+	window.onload = 函数
+	
+	2.鼠标事件
+	a.onclick - 单击事件
+	
+	3.键盘事件
+	onkeypress - 按下弹起
+	onkeydown - 按下
+	onkeyup - 弹起
+	
+	
+	4.输入框内容改变
+	onchange - 输入框输入状态结束
+-->
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			num=0
+			//1.当页面加载完成后采取获取节点
+			window.onload =function(){
+				var pNode = document.getElementById('p1')
+				console.log(pNode)
+				
+				//鼠标进入
+				pNode.onmouseover =function(){
+					this.style.backgroundColor = 'red';
+					
+				}
+				//鼠标移开
+				pNode.onmouseout =function(){
+					this.style.backgroundColor = 'white'
+				}
+				
+				//鼠标按下
+				pNode.onmousedown =function(){
+					this.innerText = '鼠标按下'
+				}
+				
+				//鼠标弹起
+				pNode.onmouseup =function(){
+					this.innerText = '鼠标弹起'
+				}
+				
+				//鼠标滚动
+				pNode.onmousewheel=function(){
+					this.innerText = '鼠标滚动'
+					num++
+				}
+				console.log(num)
+			}
+		</script>
+	</head>
+	<body>
+		<p id="p1">我是段落1</p>
+		<input type="text" name="" id="input2" value="" />
+	</body>
+</html>
+<script type="text/javascript">
+	//键盘事件对象：key属性 - 按键的值 ， keycode属性 -按键的值的编码
+	var input2Node = document.getElementById('input2')
+	input2Node.onchange =function(){
+		window.alert('输入结束')
+	}
+</script>

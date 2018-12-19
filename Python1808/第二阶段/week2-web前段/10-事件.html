@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1" style="width: 200px;height: 200px;background-color: pink;">
+			
+		</div>
+		<button id="button1">弹出弹框</button>
+		<button id="btn3">改变字体颜色</button>
+		<button id="btn4">改变样式</button>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	//js是事件驱动语言
+	//1.事件三要素（事件源，事件，事件驱动程序）
+	/*
+	 * 例如：
+	 * 小明打狗，狗嗷嗷叫  - 在这个事件中，狗是事件源，狗被打就是事件，狗嗷嗷叫是事件驱动程序
+	 * 小明打狗，它老爸就打他 - 事件源是狗，狗被打就是事件，小明被打就是事件驱动程序
+	 * 点击按钮，就弹出一个弹窗 - 事件源：按钮 ， 事件：点击 ，驱动程序：弹出弹框
+	 */
+	
+	
+	//2.绑定事件
+	/*
+	 * 第一步：获取事件源
+	 * 第二步：绑定事件
+	 * 第三步：写驱动程序
+	 * 
+	 */
+	//a.绑定事件-在标签内部给事件源的事件属性赋值
+	/*<标签  事件属性='驱动程序' ></标签> - 一般不这样绑定
+	 * 
+	 * 注意：这个时候被绑定的驱动程序如果是函数，函数中的this关键字默认是window
+	 */
+	
+	//b.通过节点绑定事件()
+	//标签节点.事件属性 = 函数
+	//注意：这个时候函数中的this就是事件源
+	
+	//c.通过节点绑定事件2
+	//标签节点.事件属性 = 匿名函数
+	//注意：这个时候函数中的this就是事件源
+	var btn3Node =document.getElementById('btn3')
+	btn3Node.onclick =function(){
+		this.style.color ='yellow';
+	}
+	
+	//d.通过节点绑定事件3
+	//节点.addEventListener(事件名，函数) -指定的节点产生指定事件后调用指定的函数
+	//事件名 - 字符串，去掉on
+	//注意：这个时候函数中的this就是事件源；这种方式可以给同一个节点的同一事件绑定多个事件程序
+	var btn4Node =document.getElementById('btn4');
+	btn4Node.addEventListener('click',function(){
+		this.style.color = 'yellow';
+	});
+	
+	//3.获取事件对象
+	//当事件的驱动程序是一个函数的时候，函数中可以设置一个参数，来获取当前事件的事件对象
+	var div1Node =document.getElementById('div1');
+	div1Node.addEventListener('click',function(event){
+		//参数event就是事件对象
+		//a.clientX/clientY -事件产生的位置坐标（相对于浏览器内容部分的位置）
+		console.log(event);
+		if (event.offsetX <100) {
+			this.style.backgroundColor ='red'
+		}else{
+			this.style.backgroundColor ='yellow'
+		}
+	})
+	
+	//4.常见的事件类型
+</script>

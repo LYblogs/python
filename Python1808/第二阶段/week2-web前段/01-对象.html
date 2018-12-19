@@ -1,0 +1,123 @@
+<script type="text/javascript">
+	//1.什么是对象 - 和Python中的对象一样，拥有属性和方法。
+	/*
+	 * 2.创建对象
+	 * a.创建对象的字面量：{属性名1：属性值1，属性名2：属性值2}
+	 * 	 当属性值是普通值，我们叫这个属性是对象属性，当属性值是函数，这个属性就是对象方法
+	 * 
+	 * 
+	 * 
+	 */
+	p1 = {name:'明明',age:21,eat:function(){
+		console.log('吃饭饭')
+	}}
+	p2 = {
+		name:'小明',
+		age:18,
+		eat:function(){
+			console.log('吃饭饭')
+		}
+	}
+	
+	//b.通过构造方法创建对象
+	/*声明构造方法（类似Python声明类）- 声明一个函数，使用函数名来作为类名；
+	 * 在函数中通过this关键字，来添加对象属性和对象方法，这样的方法就是构造方法。
+	 * 构造方法的函数名，首字母大写
+	 * this类似Python中的self
+	 * 对象 = new 构造方法
+	 * 
+	 */
+	function Person(name,age,sex){
+		this.name = name;
+		this.age = 18;
+		this.sex = '男'
+		//添加对象方法
+		this.eat = function(food){
+			console.log(this.name+'吃'+food)
+		}
+		//返回对象
+		return this
+	}
+	//创建Person对象
+	p3 = new Person('小明')
+	p4 = new Person('小花')
+	console.log(p3,p4)
+	
+	//调用返回值，使用属性和方法
+	console.log(p4.name)
+	p4.eat('粑粑')
+	
+	//c.函数中this关键字
+	/*当调用函数的时候在前面加关键字new，就是这个函数当做构造函数创建对象
+	 * 函数中的this就是当前对象（相当于self）；
+	 * 
+	 * 直接调用函数的时候，函数中的this就是window对象
+	 */
+	
+//	p5 = Person('大明')
+//	console.log(p5)
+	
+	
+	//3.使用对象属性
+	/* a.对象.属性
+	 * b.对象[属性名]
+	 * c.
+	 */
+	p5 =new Person('大明',18,'女')
+	console.log(p5.sex)
+	console.log(p5[name])
+	p5.eat('粑粑')
+	
+	
+	//4.修改对象属性的值
+	/*
+	 * a.对象.属性
+	 * b.对象[属性名]
+	 * 
+	 */
+	
+	//修改属性值
+	p5.name = '小红'
+	console.log(p5.name)
+	p5[name] = '大红'
+	console.log(p5[name])
+	
+	//添加属性
+	p5.xuehao = '20185555'
+	console.log(p5)
+	
+	//给对象添加属性，不影响其他对象
+	console.log(p4)
+	
+	//给指定构造方法创建的所有对象都添加指定的属性
+	Person.prototype.didi = 'abc'
+	console.log(p5.didi)
+	
+	
+	//练习：用一个数组保存多个学生对象，要求学生对象中有名字，年龄，成绩。最后按成绩进行排序
+	
+	function Student(name,age,score){
+		this.name = name
+		this.age = age
+		this.score = score
+	}
+	stu1= new Student('小明',18,88)
+	stu2= new Student('小红',21,99)
+	stu3= new Student('小猪',20,80)
+	students =[stu1,stu2,stu3]
+	//sort方法排序后，原数组会改变，也会产生新的数组
+	new_students=students.sort(function(a,b){return b.score-a.score})
+	console.log(new_students)
+	
+</script>
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>

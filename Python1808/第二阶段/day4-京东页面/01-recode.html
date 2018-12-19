@@ -1,0 +1,124 @@
+<!--
+	1.标准流
+	块级标签- 一个占一行，默认宽度是父标签的宽度，设置宽高有效
+	行内标签 - 一行站多个，默认宽高是内容的宽高
+	行内块标签 - 
+	dispaly - 修改标签类型
+	
+	3.脱标（脱流） - 浮动、定位
+	一行显示多个，默认大小是内容大小，设置宽高有效（标签之间不会有间隙）
+	4.浮动（float）
+	letf - 左浮动
+	right - 右浮动
+	
+	5.文字环绕
+	被环绕的浮动，文字不浮动
+	b.清除浮动 - 
+	
+-->
+
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--1.文字相关属性-->
+		<style type="text/css">
+			#div1{
+				/*1.字体大小*/
+				font-size: 20px;
+				
+				/*2.字体颜色*/
+				color: mediumspringgreen;
+				
+				/*3.文字字体*/
+				font-family: "楷体";
+				
+				/*4.文字加粗*/
+				font-weight:;
+				
+				/*5.水平对齐方式*/
+				/*left（默认）- 左对齐*/
+				/*right - 右对齐*/
+				/*center-居中*/
+				/*注意:这个属性是针对标签中的内容（可以是文字也可以是其他标签）*/
+				/*text-align: center;*/
+				
+				/*6.文字行高*/
+				/*一个标签只有一行内容的时候可以通过设置行高和标签高度相同
+				 来让内容在垂直方向居中*/
+				line-height: 100px;
+				
+				/*7.文字装饰器*/
+				/*none - 去掉装饰器
+				 underline - 添加下划线
+				 overline - 添加上化线
+				 line-throug -删除线
+				 */
+				text-decoration: underline;
+				
+				/*8.首行缩进*/
+				text-indent: 2em;
+				
+				/*9.文字间距*/
+				letter-spacing:4px;
+			}
+			
+		</style>
+		<!--2.列表相关属性-->
+		<style type="text/css">
+			ul{
+				/*1.
+				 disc（实心圆）/circle(空心圆)/square(实心方块)
+				 none（去掉列表符号）
+				 * */
+				list-style-type: disc;
+				
+				/*2.定义符号图片*/
+				list-style-image:url(img/aaa.ico) ;
+				
+				/*3.定义符号位置
+				 * 
+				 * */
+			}
+			
+		</style>
+		<div id="div1">
+			是第四季度抗裂砂浆打开了聚隆科技阿卡丽路径阿克江 
+		</div>
+		
+		<ul>
+			<li>数学</li>
+			<li>语文</li>
+			<li>英语</li>
+		</ul>
+		<style type="text/css">
+			#bg{
+				/*1.设置背景图片
+				 将指定图片作为当前标签的背景
+				 */
+				background-image: url(img/logo.png);
+				
+				/*2.背景图是否平铺
+				 repeat(默认)- 当背景图比标签小的时候，背景会重复渲染，直到将标签全部铺满
+				 */
+				background-repeat: no-repeat;
+				
+				/*3.背景图的位置
+				 x坐标 - 数值/letf/right/center
+				 y坐标 - 数值/top/bottom/center*/
+				
+				background-position-x:center;
+				background-position-y: center;
+				
+			}
+		</style>
+		<div id="bg"style="width: 600px;height: 500px;background-color: #fff8f0;">
+			
+		</div>
+	</body>
+</html>

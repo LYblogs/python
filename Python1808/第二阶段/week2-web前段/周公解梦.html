@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				position:relative;
+				border: none;
+			}
+			#top{
+				height: 250px;
+				border-bottom: 1px darkgray solid;
+				text-align: center;
+				
+			}
+			body{
+				background: url(img/timg.jpg) repeat;
+				background-size:300px;
+			}
+			#toptop #input1{
+				margin-top: 215px;
+				border-bottom:1px black solid;
+				vertical-align: middle;
+				text-align: center;
+				font-size: 25px;
+				outline: 0;
+			}
+			
+			#toptop #but1{
+				margin-top: 205px;
+				margin-left: 5px;
+				width:80px;
+				height: 40px;
+				background-color: darkseagreen;
+				color: white;
+				vertical-align: middle;
+				font-size:25px;
+				border-radius: 10%;
+				cursor: pointer;
+				outline: 0;
+			}
+			
+			#toptop #but1:active{
+				background-color: #D2691E;
+			}
+			
+			#bottom{
+				margin-left: 450px;
+				width: 450px;
+				height: 300px;
+				font-size: 25px;
+				color: yellow;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="top">
+			
+			<div id="toptop">
+				<input type="text" name="" id="input1" value="" placeholder="请输入..." />
+				<button id="but1">查询</button>
+			</div>
+		</div>
+		<div id="bottom">
+			
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		//获取节点
+		var inputNode=$('#input1')
+		var but1Node =$('#but1')
+		var bottomNode =$('#bottom')
+		
+		but1Node.on('click',function(){
+			console.log(111)
+			//获取输入信息
+			var value1 =inputNode.val()
+			
+			//网络请求
+			var url ='http://api.tianapi.com/txapi/dream/'
+			$.get(url,{'key':'772a81a51ae5c780251b1f98ea431b84','word':value1},function(re){
+					new_value =re.newslist[0].result
+					bottomNode.text(new_value)
+			},'json')
+			inputNode.val('')
+		})
+	})
+</script>

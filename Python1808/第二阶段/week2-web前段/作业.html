@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				position: relative;
+			}
+			#div1{
+				margin-top: 50px;
+			}
+			#div1 img{
+				margin-left: 50px;
+				height: 100px;
+				width: 10%;
+			}
+			#div2{
+				position: absolute;
+				left: 500px;
+				background-color: white;
+				width: 500px;
+				height: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1" align="center">
+			<img id="img1" src="img/1.jpg"/>
+			<img src="img/2.jpeg"/>
+			<img src="img/3.jpg"/>
+			<img src="img/4.jpg"/>
+		</div>
+		<div id="div2" align="center">
+			
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var bigImgNode=document.createElement('img');
+	function bigImage(){
+		console.log(this+'asdad')
+		bigImgNode.src=this.src;
+		bigImgNode.style.height='300px';
+		var div2Node =document.getElementById('div2');
+		div2Node.appendChild(bigImgNode);
+	}
+	
+	
+	var imgNode =document.getElementsByTagName('img');
+	for(i in imgNode){
+		if(typeof(imgNode[i])==="object"){
+			imgNode[i].onclick=bigImage	;
+		}
+	
+	}
+	
+</script>

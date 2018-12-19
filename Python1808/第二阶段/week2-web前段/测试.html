@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>星巴克</title>
+    <meta name="description" content="" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+
+    <link href="https://staff.bootcss.com/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/site.min.css?v=9e0a081675" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://staff.bootcss.com/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+      <script src="https://staff.bootcss.com/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+    <![endif]-->
+
+    <script>
+    function imgLoaded(img) {
+        var imgWrapper = img.parentNode;
+        imgWrapper.className += imgWrapper.className? ' loaded' : 'loaded';
+    }
+    </script>
+
+    <link rel="canonical" href="http://www.youzhan.org/xing-ba-ke/" />
+    <meta name="generator" content="Ghost 0.6" />
+    <link rel="alternate" type="application/rss+xml" title="Bootstrap 优站精选" href="http://www.youzhan.org/rss/" />
+    <script id="ad-template" type="text/x-handlebars-template">
+{{#each ads}}
+<div class="col-xs-12 col-md-6">
+    <article class="post tag-ad">
+    	<h2 class="post-title">
+    		<a href="{{url}}" onclick="_hmt.push(['_trackEvent', 'titlelink', 'click', '{{{title}}}'])" target="_blank">{{{title}}}</a>
+    	</h2>
+        <div class="post-featured-image">
+            <a class="thumbnail" href="{{url}}" onclick="_hmt.push(['_trackEvent', 'imagelink', 'click', '{{{title}}}'])" target="_blank">
+              <img src="{{img}}" width="700" height="438" alt="{{{title}}}" onload="imgLoaded(this)">
+            </a>
+        </div>
+    </article>
+</div>
+{{/each}}
+</script>
+
+<script>
+
+/*var ads=
+[
+  {
+    "title": "Jekyll",
+    "url": "https://www.jekyll.com.cn",
+    "img": "http://assets.youzhan.org/img/7/b1/c3be279ad9eb8d9ee60b306c42ca0.jpg!md"
+  },
+    {
+    "title": "Ghost中文网",
+    "url": "http://www.ghostchina.com/",
+    "img": "http://assets.youzhan.org/img/4/c8/82cc9654d57db3ffd45f2382d1937.jpg!md"
+  },
+  {
+    "title": "Laravel中文网",
+    "url": "http://www.golaravel.com/",
+    "img": "http://assets.youzhan.org/img/a/a8/7201564a9f321051043b4db37e616.jpg!md"
+  },
+  {
+    "title": "BootCDN",
+    "url": "https://www.bootcdn.cn/",
+    "img": "http://assets.youzhan.org/img/8/13/042b25c349336f6a113d1a07812ad.jpg!md"
+  }
+    
+];*/
+
+</script>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png?v=9e0a081675">
+    <link rel="shortcut icon" href="/assets/ico/favicon.png?v=9e0a081675">
+    
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?15c141dd41d16b47f32d4c5476e1f6f4";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+ 
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Hello, world!</h1>
+        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+       </div>
+        <div class="col-md-4">
+          <h2>Heading</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; 2016 Company, Inc.</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+    
+    <script src="https://staff.bootcss.com/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <script src="https://staff.bootcss.com/npm/handlebars@3.0.3/dist/handlebars.min.js"></script>
+
+    <script type="text/javascript" src="/assets/js/index.js?v=9e0a081675"></script>
+  </body>
+</html>

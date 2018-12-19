@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			button{
+				margin-left: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<button onclick="windowAction()">点我呀</button>
+		<button onclick="windowRmove()">移动</button>
+	</body>
+</html>
+<script type="text/javascript">
+	//1.什么是BOM - 浏览器对象模型（browser object model）
+	/*
+	 * js中提供了一个全局的window对象，用来表示当前浏览器
+	 * js中声明的全局变量，其实都是绑定在window对象中的属性（使用window属性和方法的时候前面的window.可以省略）
+	 * 
+	 */
+	 var a = 100;
+	 console.log(a,window.a)
+//	 alert('你好')
+	 document.write('曾宇是sb')
+	 
+	 //2.window基本操作
+	 /*
+	  * a.打开新窗口
+	  */
+//	 open('http://www.baidu.com','')
+	//b.关闭窗口
+//	close()
+	
+//	window.moveTo()
+	function windowAction(){
+		mywindow =window.open('','','width=100,height=50')
+	}
+	function windowRmove(){
+		//c.移动当前窗口
+		mywindow.moveTo(300,300)
+		mywindow.focus()
+		//d.调整窗口大小
+		mywindow.resizeTo(200,200)
+		//e.刷新()
+//		window.reload(true)
+	}
+	//f.获取浏览器的宽度和高度
+	//window.innerWidth/window.innerHeight - 浏览器显示内容部分的宽度和高度
+	//window.outerWidth/window.outerHeight - 整个浏览器的宽度和高度
+	console.log(window.innerWidth,window.innerHeight)
+	console.log(window.outerWidth,window.outerHeight)
+	
+	
+	//3.弹框
+	//a.alert（提示信息）- 弹出提示信息（带确认按钮）
+	window.alert('滴滴滴')
+	//b.confirm(提示信息) - 弹出提示信息（带取消和确定按钮），返回值是布尔值，取消是false，确定是true
+	window.confirm('是否删除？')
+	
+	//c.prompt（提示信息，输入框的默认值） - 弹出一个带输入框和取消，确定按钮的提示框；
+	//如果点取消，返回值是null，点确定返回值是输入框中的内容
+	var result=window.prompt('message','defalut')
+	console.log(result)
+</script>

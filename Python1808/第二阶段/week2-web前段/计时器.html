@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				position: relative;
+			}
+			#div11{
+				background-color: #7FFF00;
+				width: 50px;
+				height: 100px;
+				position: absolute;
+				left: 500px;
+				top: 100px;
+				color: white;
+				text-align: center;
+				cursor: pointer;
+			}
+			#div12{
+				background-color: pink;
+				width: 50px;
+				height: 100px;
+				position: absolute;
+				left: 600px;
+				top: 100px;
+				color: white;
+				text-align: center;
+				cursor: pointer;
+			}
+			#div2{
+				background-color: chocolate;
+				width: 300px;
+				height: 300px;
+				border-radius: 50%;
+				position: absolute;
+				left: 425px;
+				top: 115px;
+			}
+			#div3{
+				width: 150px;
+				height: 75px;
+				background-color: darkorange;
+				position: absolute;
+				top: 230px;
+				left: 500px;
+				line-height: 75px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			<div id="div11" onclick="start1()">开始</div>
+			<div id="div12" onclick="stop1()">结束</div>
+		</div>
+		<div id="div2"></div>
+		<div id="div3" align="center">
+			
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	num4=0
+	num = 0
+	num1 = 0
+	num2 =0
+	var pNode =document.getElementById('div3')
+	pNode.innerText =num4+''+num+':'+num1+num2+'s'
+	function start1(){
+		intervall =window.setInterval(function(){
+		pNode.innerText =num4+''+num+':'+num1+num2+'s'
+		num2++
+		if(num2==10){
+			num2=0
+			num1++
+			if(num1==10){
+				num1=0
+				num++
+				if(num==10){
+					num=0
+					num4++
+				}
+			}
+		}
+	},10)
+	}
+	
+	function stop1(){
+		window.clearInterval(intervall)
+	}
+</script>

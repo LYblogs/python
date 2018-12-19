@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box1{
+				width:400px ;
+				height: 400px;
+				margin: auto;
+				background-color: #FF7F50;
+			}
+			#box11{
+				width:200px ;
+				height: 200px;
+				margin: auto;
+				background-color: #FFC0CB;
+			}
+			#box111{
+				width:100px ;
+				height: 100px;
+				margin: auto;
+				background-color:#FFFFFF;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box1">
+			<div id="box11">
+				<div id="box111">
+					
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var box1Node = document.getElementById('box1');
+	var box11Node = document.getElementById('box11');
+	var box111Node = document.getElementById('box111');
+	
+	//1.事件冒泡-在字标签产生的事件会传递给父标签
+	box1Node.onclick = function(){
+		console.log('box1被点击');
+		return false
+	};
+	box11Node.onclick = function(event){
+		console.log('box11被点击');
+		return false
+	};
+	box111Node.onclick = function(event){
+		console.log('box111被点击');
+		//2.捕获事件 - 阻止事件从子标签传递给父标签
+		event.stopPropagation();
+//		return false
+	};
+</script>

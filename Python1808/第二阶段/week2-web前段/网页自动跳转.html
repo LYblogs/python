@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="p1"></p><button onclick="jump1()">跳转</button>
+	</body>
+</html>
+<script type="text/javascript">
+	num=5
+	var pNode =document.getElementById('p1')
+	pNode.innerHTML=num+'s后跳转到百度....'
+	var jump = window.setInterval(function(){
+		num--
+		pNode.innerHTML=num+'s后跳转到百度....'
+		if(num == 0){
+			window.clearInterval(jump)
+			window.open('http://www.baidu.com','')
+			window.close()
+		}
+	},1000)
+	function jump1(){
+		window.open('http://www.baidu.com','')
+		window.close()
+	}
+</script>

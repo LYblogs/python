@@ -1,0 +1,303 @@
+/*<!--===========0.通用标签============-->*/
+*{
+	/*取消所有自带的间距*/
+	margin: 0;
+	padding: 0;
+	/*所有的标签的字标签默认相对于自己定位*/
+	position: relative;
+}
+a{
+	text-decoration: none;
+}
+
+
+/*<!--===========1.网页顶部============-->*/
+
+#head{
+	height: 120px;
+}
+
+#head #top{
+	height: 80px;
+}
+
+#head #bottom{
+	height: 40px;
+	background-color: #fff8f0;
+	text-align: center;
+	line-height: 40px;
+	
+}
+
+#head #bottom a:hover{
+	text-decoration: underline;
+}
+
+#head #bottom img{
+	position: absolute;
+	top: 50%;
+	margin-top: -8px;
+}
+
+#head #bottom font{
+	margin-left: 20px;
+	color: darkgray;
+	font-size: 12px;
+	font-family: ;
+}
+
+
+#head #top #div1{
+	position: absolute;
+	left: 185px;
+	
+	/*垂直居中*/
+	top: 50%;
+	margin-top: -30px;
+}
+
+#head #top #a1{
+	position: absolute;
+	right: 190px;
+	bottom: 10px;
+	font-size: 12px;
+	color: darkgray;
+	
+	/*背景图
+	 background：图片地址  是否平铺  x坐标  y坐标 背景颜色*/
+	padding-left: 23px;
+	background: url(../img/q-icon.png) no-repeat 0px center rgba(0,0,0,0);
+}
+#head #top #a1:hover{
+	color: red;
+	text-decoration: underline;
+}
+
+
+
+
+
+
+/*<!--============2.网页中间===========-->*/
+#body{
+	height: 470px;
+	background:url(../img/00.jpg) repeat 186px center #53a9f4;
+}
+#body #logo{
+	width: 350px;
+	height: 400px;
+	background-color: white;
+	
+	/*定位*/
+	position: absolute;
+	right: 188px;
+	top: 15px;
+}
+
+#body #logo #div1{
+	height: 40px;
+	background-color: #fff8f0;
+}
+
+#body #logo #div2{
+	height: 55px;
+	background-color: white;
+}
+#body #logo #div3{
+	height: 255px;
+	border-bottom: 1px solid #f4f4f4;
+	border-top: 1px solid #f4f4f4
+	
+}
+
+#body #logo #div4{
+	height: 50px;
+	line-height: 50px;
+}
+
+#body #logo #div4 #a1{
+	margin-left: 20px;
+	margin-right: 20px;
+	background: url(../img/qq.png) no-repeat 0px center white;
+	padding-left: 26px;
+	font-size: 13px;
+	color: #666666;
+}
+#body #logo #div4 #a1:hover{
+	text-decoration: underline;
+	color: #b61d1d;
+}
+#body #logo #div4 #a3:hover{
+	text-decoration: underline;
+	color: #b61d1d;
+}
+#body #logo #div4 #a2:hover{
+	text-decoration: underline;
+	color: #b61d1d;
+}
+
+#body #logo #div4 #a2{
+	margin-left: 20px;
+	background: url(../img/weixin.png)no-repeat 0px center white;
+	padding-left: 26px;
+	font-size: 13px;
+	color: #666666;
+}
+
+#body #logo #div4 #a3{
+	position: absolute;
+	right:20px;
+	background: url(../img/right.png) no-repeat 0px center;
+	padding-left: 26px;
+	font-size: 40pxpx;
+	color:#b61d1d;
+}
+
+
+
+#body #logo #div1 p{
+	font-size: 12px;
+	text-align: center;
+	color: darkgray;
+	line-height: 40px;
+}
+
+#body #logo #div1 p img{
+	position: absolute;
+	top: 50%;
+	margin-top: -8px;
+}
+
+#body #logo #div2 button{
+	width: 167px;
+	height: 100%;
+	background-color: white;
+	border: none;
+	color: rgb(83,83,83);
+	font-size: 20px;
+	font-weight: 200;
+}
+/*成为焦点*/
+#body #logo #div2 button:focus{
+	outline: none;
+	color: rgb(215,36,50);
+	font-weight: 900;
+}
+#body #logo #div2 button:hover{
+	color: rgb(215,36,50);
+	font-weight: 900;
+}
+
+
+#body #logo #div3 #username,#body #logo #div3 #password{
+	height: 40px;
+	margin: 20px;
+	background-color:white;
+}
+#body #logo #div3 #username{
+}
+
+#body #logo #div3 #username img{
+	float: left;
+	height:100%;
+	width: 40px;
+	border: 1px solid rgba(220,220,220,1);
+}
+
+#body #logo #div3 #password img{
+	float: left;
+	width: 40px;
+	height:100%;
+	border: 1px solid rgba(220,220,220,1);
+}
+#body #logo #div3 #username input{
+	float: left;
+	border: 0;
+	height: 40px;
+	width:260px;
+	border: 1px solid rgba(220,220,220,1);
+	padding-left:5px;
+	font-size: 14px;
+}
+
+#body #logo #div3 #password input{
+	float: left;
+	border: 0;
+	height: 40px;
+	width:260px;
+	border: 1px solid rgba(220,220,220,1);
+	padding-left:5px;
+	font-size: 14px;
+}
+#body #logo #div3 #username input:focus{
+	outline: 0;
+}
+#body #logo #div3 #password input:focus{
+	outline: 0;
+}
+
+#body #logo #div3 a{
+	position: absolute;
+	right: 20px;
+	color: #666;
+	font-family: Arial, Verdana, 宋体;
+	font-size: 12px;
+}
+
+#body #logo #div3 a:hover {
+    color: #E4393C;
+    text-decoration: underline;
+    
+}
+#body #logo #div3 button{
+	position: absolute;
+	bottom: 30px;
+	left: 20px;
+	right: 20px;
+	height: 35px;
+	width: 310px;
+	background-color:#e4393c;
+	font-family:'Microsoft YaHei';
+	font-size: 20px;
+	color: #fff;
+	border: 1px solid #e85356;
+}
+#body #logo #div3 button:focus{
+	outline: 0;
+}
+
+#body #logo #div3 button:active{
+	border: deeppink 3px solid;
+	border-radius: 3px;
+	color: pink;
+}
+
+
+
+
+/*<!--============3.网页底部===========-->*/
+
+#bottom{
+	height: 110px;
+	background-color:white;
+}
+#bottom #div1 a{
+	margin-left: 10px;
+	margin-right: 10px;
+	font-size: 12px;
+	color: #666666;
+}
+#bottom #div1 a:hover{
+	text-decoration: underline;
+	color: #FF0000;
+}
+
+#bottom #div1{
+	height:30px;
+	margin-top: 30px;
+	text-align: center;
+}
+#bottom #div2{
+	color: #666666;
+	font-size: 12px;
+}

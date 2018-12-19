@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				position: relative;
+			}
+			div{
+				width: 200px;
+				height: 200px;
+			}
+			#div1{
+				position: absolute;
+				top: 100px;
+				left: 100px;
+				background-color: #008000;
+				/*默认是0，越大就在越上层*/
+				/*z-index: 1;*/
+			}
+			#div2{
+				position: absolute;
+				top: 150px;
+				left: 150px;
+				background-color: pink;
+				/*z-index: 2;*/
+			}
+			#div3{
+				position: absolute;
+				top: 50px;
+				left:200px;
+				background-color: #DEB887;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="div1"></div>
+		<div id="div2"></div>
+		<div id="div3"></div>
+	</body>
+</html>
+<script type="text/javascript">
+//	var div1Node =document.getElementById('div1')
+//	var div2Node =document.getElementById('div2')
+//	var div3Node =document.getElementById('div3')
+	var divNodeArray =document.getElementsByTagName('div')
+	divNodeArray[0].style.left='100px'
+	divNodeArray[0].style.top='100px'
+	divNodeArray[1].style.left='150px'
+	divNodeArray[1].style.top='150px'
+	divNodeArray[2].style.left='200px'
+	divNodeArray[2].style.top='50px'
+	//保存最上方的节点
+	var num = 0
+	var offsetX1 ,offsetY1;
+	function click(evt){
+		num++
+		this.style.zIndex = num;
+		this.isDown =true;
+		offsetX1 =evt.offsetX;
+		offsetY1 =evt.offsetY;
+	}
+	
+	function drag1(evt){
+		if(this.isDown){
+			var left =parseInt(this.style.left.slice(0,-2));
+			var top =parseInt(this.style.top.slice(0,-2));
+			this.style.left = (left+(evt.offsetX-offsetX1))+'px'
+			this.style.top = (top+(evt.offsetY-offsetY1))+'px'
+		}
+	}
+	
+	//绑定事件
+	for(x in divNodeArray){
+		var divNode =divNodeArray[x]
+		divNode.onmousedown =click;
+		divNode.onmousemove=drag1;
+		divNode.onmouseup =function(){
+			this.isDown =false
+		}
+	}
+</script>

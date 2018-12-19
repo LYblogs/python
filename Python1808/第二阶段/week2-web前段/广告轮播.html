@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding:0 ;
+				position: relative;
+			}
+			#bottom{
+				width: 500px;
+				height: 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="top">
+			
+		</div>
+		<div id="bottom">
+			<img id="bigImg" src=""/>
+		</div>
+		<script type="text/javascript">
+			//1.获取节点
+			var smallboxNode =document.getElementById('top');
+			var bigboxNode =document.getElementById('bottom');
+			var bigimgNode =document.getElementById('bigImg');
+			//2.获取数据源
+			var imgArray = [
+				{name:'图1',small_url:'img/thumb-1.jpg',big_url:'img/picture-1.jpg'},
+				{name:'图2',small_url:'img/thumb-2.jpg',big_url:'img/picture-2.jpg'},
+				{name:'图3',small_url:'img/thumb-3.jpg',big_url:'img/picture-3.jpg'},
+			];
+			
+			//3.将数据展示在浏览器相应位置
+			var currentsmallNode = null
+			for (x in imgArray){
+				//根据小图创建节点
+				var imgobj = imgArray[x];
+				var smallimgeNode =document.createElement('img');
+				if(x==0){
+					smallimgeNode.style.borderBottom='1px solid red'
+					currentsmallNode=smallimgeNode;
+					currentsmallNode.index = 0
+				}
+				smallimgeNode.src=imgobj.small_url;
+				//在节点对象中保存和节点相关的信息
+				smallimgeNode.imgobj =imgobj
+				//添加节点
+				smallboxNode.appendChild(smallimgeNode);
+				//绑定事件
+				smallimgeNode.onclick =function(){
+					 bigimgNode.src=this.imgobj.big_url;
+					 //去掉之前的下边框
+					 currentsmallNode.style.border='none';
+					 this.style.borderBottom='1px solid red'
+					 //更新当前节点
+					 currentsmallNode=this;
+				}
+			
+			}
+			//4.大图默认显示
+			bigimgNode.src=imgArray[0].big_url
+			
+			
+			//5.定时事件
+			var index =0
+			var inter1 =window.setInterval(function(){
+				var allsmallimgNode =smallboxNode.children
+				index++
+				if(index ==allsmallimgNode.length){
+					index=0;
+				}
+				var smallimgNode = allsmallimgNode[index];
+				bigimgNode.src = smallimgNode.imgobj.big_url;
+				currentsmallNode.style.border='none'
+				allsmallimgNode.style.borderBottom='1px solid red'
+				currentsmallNode=smallimgeNode;
+				currentsmallNode.index=index;
+			},2000)
+		</script>
+	</body>
+</html>

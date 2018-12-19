@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		*{
+			<style type="text/css">
+				
+			</style>
+		}
+		<meta charset="UTF-8">
+		<title>CSS基础</title>
+		<!--link标签 - 导入外部文件 
+			rel属性：确定导入文件功能 :stylesheet -设置样式表 icon - 设置图标
+			type属性：用来确定文件类型；文件类型/文件后缀
+			href属性：文件路径
+		-->
+		<link rel="icon" type="img/ico" href="img/1.ico"/>
+		<link rel="stylesheet" type="text/css" href="css/1.css"/>
+	</head>
+	<body>
+		<style type="text/css">
+			a{
+					color: greenyellow;
+				background: royalblue;
+			}
+			p{
+				color: pink;
+				background: green;
+				
+			}
+		</style>
+		<!--1.什么是CSS
+			css是web标准中的表现标准，专门负责网页中内容布局和样式
+			目前使用的是css3
+			
+			2.CSS的语法
+			a.基本结构
+			选择器{属性名1：属性值1；属性名2：属性值2；...}
+			
+			b.说明
+			选择器{}- 通过选择器决定样式是针对哪个标签来写的(在内联样式表中没有这个结构)
+			属性 - 属性名不是随便写的，必须是css支持提供的两百多个属性中的一个
+			
+			3.CSS代码写在哪？
+			a.内联样式表(只能针对一个标签有效)
+			将样式表作为html标签的style属性值
+			
+			b.内部样式表(可以针对当前html所有标签)
+			将样式表作为head标签中style标签的内容
+			style标签中的内容必须是css代码
+			style可以放在head标签也可以放在body里面
+			
+			c.外部样式表
+			将样式表写在CSS文件中，在通过link导入；
+			
+			优先级：内联样式表最高；内部和外部样式，谁后写，谁的样式就高
+			
+			
+			常用属性补充：
+			color - 字体颜色
+			font-size - 字体大小
+			background -color -背景颜色
+			width - 宽度
+			height -高度
+			
+			CSS中的颜色值：
+			a.颜色的英语单词
+			b.rgb的十六进制值，例如：#ff0000
+			c.直接使用rgb值：rgb（R,G,B，alpha）alpha：0（完全透明）~1（不透明）
+			
+			CSS中的数字：如果数字表示大小必须加单位
+			px(像素)
+			em(空格)
+		
+		-->
+		<!--1.内联样式表			
+			body中每个有显示效果的标签都有style属性，用来设置当前标签的样式
+			style属性值的引号中，写的是CSS代码
+		-->
+		<p style="color:rgba(255,0,0,0.5); font-size: 12px; background: greenyellow;">家会计师的考虑聚隆科技索拉卡尽快了解到历史记录</p>
+		<a href="http://www.baidu.com">百度</a>
+		<p>撒大声地速度 速度速度 速度 速度 是IE我我i</p>
+		<div id="">
+			滴滴滴滴
+		</div>
+	</body>
+</html>
